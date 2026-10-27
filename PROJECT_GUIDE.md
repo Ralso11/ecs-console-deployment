@@ -45,7 +45,9 @@ Docker image in ECR  (already built and pushed in the previous project)
 
 All of this lives inside an **ECS cluster**, which on Fargate is only an organizational folder (there are no servers to manage in it).
 
-The diagram in the [README](README.md#architecture) shows the same thing as a picture, including the VPC, subnet, ECR, and CloudWatch Logs.
+The diagram in the [README](README.md#architecture) shows the same thing as a picture, including the VPC, subnet, ECR, and CloudWatch Logs:
+
+![Architecture diagram](docs/architecture.svg)
 
 ## Part 3 — Step-by-step: what was actually done
 
@@ -101,6 +103,8 @@ Open the task, copy its **Public IP**, visit `http://<public-ip>:8080`. Expected
 ```
 
 Not a login page — the tutorial's application is a different one. For this app, a small JSON response *is* success.
+
+![Browser showing the JSON response](docs/screenshots/01-json-response.png)
 
 ## Part 4 — What went wrong, and why
 

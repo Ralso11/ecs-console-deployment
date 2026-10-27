@@ -14,6 +14,10 @@ It turned out to be more valuable than expected, because two real problems showe
 
 ## Architecture
 
+![Architecture diagram](docs/architecture.svg)
+
+The same picture as an editable Mermaid diagram (GitHub renders it automatically):
+
 ```mermaid
 flowchart LR
     U["Browser<br/>(my IP)"] -->|"HTTP 8080"| SG["Security group<br/>inbound TCP 8080"]
@@ -50,7 +54,9 @@ flowchart LR
 | Service | `cryptoapp-service`, 1 desired task, Fargate |
 | Networking | default VPC, public subnet in zone 1a, public IP enabled, default security group + inbound TCP 8080 |
 
-Result when it worked:
+Result when it worked (the public IP belonged to a temporary task that has since been deleted):
+
+![Browser showing the JSON response from the container on port 8080](docs/screenshots/01-json-response.png)
 
 ```json
 {"message":"Hello from a Docker container running on AWS ECS!","status":"healthy"}
